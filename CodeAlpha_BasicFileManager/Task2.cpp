@@ -7,15 +7,6 @@
 using namespace std;
 namespace fs = std::filesystem;
 
-// Function to clear the terminal
-void clearScreen() {
-#ifdef _WIN32
-    system("cls");  // Windows
-#else
-    system("clear");  // Linux/Unix/Mac
-#endif
-}
-
 // Function to list both directories and files in the given path
 void listContents(const string& path) {
     cout << "Contents of " << path << ":\n";
@@ -154,7 +145,6 @@ int main() {
     string currentDir = fs::current_path().string(); // Start at the current directory
 
     while (true) {
-        clearScreen();  // Clear the terminal on each loop iteration
 
         cout << "\nCurrent Directory: " << currentDir << "\n";
         cout << "\nMenu:\n";
